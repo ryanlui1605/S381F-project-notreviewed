@@ -1,0 +1,59 @@
+<html>
+
+<head>
+    <title>
+        Change Restaurant <%= name %>
+    </title>
+</head>
+
+<body>
+    <header>
+        <h1> Modify Restaurant <%= name %></h1>
+    </header>
+    <form action="/change" method="POST" enctype="multipart/form-data">
+        <input type="hidden" value="<%= _id %>" name="_id"> 
+        <p>
+            <label>Name</label>
+            <input name="name" type="text" value="<%= name %>"  required>
+        </p>
+        <p>
+            <label>Borough</label>
+            <input name="borough" type="text" value="<%= borough %>">
+        </p>
+        <p>
+            <label>Cuisine</label>
+            <input name="cuisine" type="text" value="<%= cuisine %>">
+        </p>
+        <p>
+            <label>Street</label>
+            <input name="street" type="text" value="<%= address.street %>"> 
+        </p>
+        <p>
+            <label>Building</label>
+            <input name="building" type="text" value="<%= address.building %>">
+        </p>
+        <p>
+            <label>Zipcode</label>
+            <input name="zipcode" type="text" value="<%= address.zipcode %>">
+        </p>
+<!--        change html UI position lat lon-->
+<!--        correct lat lon index-->
+        <p>
+            <label>GPS Coordinates (lat.)</label>
+            <input name="lat" type="text" value="<%= address.coord[0] %>">
+        </p>
+        <p>
+            <label>GPS Coordinates (lon.)</label>
+            <input name="lon" type="text" value="<%= address.coord[1] %>">
+        </p>
+        <p>
+            <label>Photo (leave it blank to unchange)</label><br />
+            <input name="sampleFile" type="file">
+        </p>
+        <p>
+            <input type="submit" value="Change">
+        </p>
+    </form>
+</body>
+
+</html>

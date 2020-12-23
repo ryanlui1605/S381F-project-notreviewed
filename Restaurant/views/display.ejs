@@ -1,0 +1,58 @@
+<html>
+
+<head>
+    <style>
+        a {
+            text-decoration: none;
+        }
+    </style>
+    <title><%= name %></title>
+    <script>
+        function goBack() { window.history.back(); }
+    </script>
+</head>
+
+<body>
+    <header>
+        <h1><%= name %></h1>
+    </header>
+    <% if(photo){ %>
+    <img src="data:<%= photoMimetype %>;base64, <%= photo %>" style="width:100%" />
+    <% } %>
+    <p>Borough: <%= borough %></p>
+    <p>Cuisine: <%= cuisine %></p>
+    <p>Street: <%= address.street %></p>
+    <p>Building: <%= address.building %></p>
+    <p>Zipcode: <%= address.zipcode %></p>
+    <p>GPS: [<%= address.coord[0] %>,<%= address.coord[1] %>]</p>
+    <p>Rating:</p>
+    <% if(grades.length) { %>
+    <ol>
+        <% for (let grade of grades) { %>
+        <li>
+            <%= grade.score %> (<%= grade.user %>)
+        </li>
+        <% } %>
+    </ol>
+    <% } %>
+    <p>Created by: <%= owner %></p>
+    <% if(address.coord[0] && address.coord[1]) {%>
+    <p>
+        <a href="/gmap?lat=<%= address.coord[0] %>&lon=<%= address.coord[1] %>&title=<%= name %>">map</a>
+    </p>
+    <% } %>
+    <a href="/rate?_id=<%= _id %>">
+        <button>Rate</button>
+    </a>
+    <a href="change?_id=<%=_id %>">
+        <button>Edit</button>
+    </a>
+    <a href="remove?_id=<%= _id %>">
+        <button>Delete</button>
+    </a>
+    <a href="/read">
+        <button>Go Back Home</button>
+    </a>
+</body>
+
+</html>

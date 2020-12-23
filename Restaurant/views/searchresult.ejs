@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <title>
+            Search Result
+        </title> 
+    </head>
+    <body>
+        <a href="/search">
+            <button>Back to search</button>
+        </a>
+        <% if(restaurants.length) { %>
+            <h1><%= restaurants.length %> restaurant<%= restaurants.length>1?'s':'' %> found</h1>
+            <table>
+                <tr>
+                    <th>Name</th>
+                </tr>
+                </thead>
+                <tbody>
+                    <% for (let restaurant of restaurants) { %>
+                    <tr>
+                        <td>
+                            <a href="/display?_id=<%= restaurant._id %>">
+                                <%= restaurant.name %>
+                            </a>
+                        </td>
+                    </tr>
+                    <% } %>
+                </tbody>
+            </table>
+            <% }else{ %>
+                <h1>
+                    No restaurant match.<br>
+                    Please try again.
+                </h1>
+            <% } %>
+    </body>
+</html>

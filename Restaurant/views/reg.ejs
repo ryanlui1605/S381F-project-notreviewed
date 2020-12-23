@@ -1,0 +1,49 @@
+<html>
+
+<head>
+    <title>Register</title>
+</head>
+
+<body style="text-align: center;">
+    <header>
+        <h1>Register</h1>
+    </header>
+    <form name="regform" action="/processreg" onsubmit="return check()" method="POST">
+        <label>Name</label>
+        <input name="userid" type="text" required />
+        <br />
+        <br />
+        <label>Password</label>
+        <input name="password" type="password" required />
+        <br />
+        <br />
+        <label>Confirm Password</label>
+        <input name="confirm" type="password" required />
+        <br />
+        <br />
+        <input type="submit" value="Register" />
+    </form>
+    <a href="/">
+        <button>Login Page</button>
+    </a>
+    <script>
+        function check() {
+            // Validate input at client side
+
+            // get userid, password, confirm password
+            const password = document.forms["regform"]["password"].value;
+            const confirm = document.forms["regform"]["confirm"].value;
+
+            // function to send alert and set return value to false;
+            if (password != confirm) {
+                // chkeck password is equal to confirm password
+                alert("Password not match");
+                return false;
+            }
+            return true;     // return checking result
+        }
+
+    </script>
+</body>
+
+</html>

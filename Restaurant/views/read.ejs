@@ -1,0 +1,56 @@
+<html>
+
+<head>
+    <style>
+        a {
+            text-decoration: none;
+        }
+    </style>
+
+    <title>Restaurant</title>
+</head>
+
+<body style="text-align: center;background-color: darkgrey;">
+    <header>
+        <h1>Restaurants</h1>
+        <p>User: <%= userid %>
+        </p>
+        <p>Showing
+            <%= restaurants.length %>
+            documents</p>
+    </header>
+
+    <p>
+        <a href=/search>
+            <button>Search Restaurant</button>
+        </a>
+    </p>
+
+    <a href=/new>
+        <button>Create New Restaurant</button>
+    </a>
+
+
+
+    <% if(restaurants.length) { %>
+    <table>
+        <tr>
+            <th>Name</th>
+        </tr>
+        </thead>
+        <tbody>
+            <% for (let restaurant of restaurants) { %>
+            <tr>
+                <td>
+                    <a href="/display?_id=<%= restaurant._id %>">
+                        <%= restaurant.name %>
+                    </a>
+                </td>
+            </tr>
+            <% } %>
+        </tbody>
+    </table>
+    <% } %>
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<html>
+
+<head>
+    <title>
+        Create New Restaurant
+    </title>
+</head>
+
+<body>
+    <header>
+        <h1>Create New Restaurant</h1>
+    </header>
+    <form action="/create" method="POST" enctype="multipart/form-data">
+        <p>
+            <label>Name</label>
+            <input name="name" type="text" required>
+        </p>
+        <p>
+            <label>Borough</label>
+            <input name="borough" type="text">
+        </p>
+        <p>
+            <label>Cuisine</label>
+            <input name="cuisine" type="text">
+        </p>
+        <p>
+            <label>Street</label>
+            <input name="street" type="text">
+        </p>
+        <p>
+            <label>Building</label>
+            <input name="building" type="text">
+        </p>
+        <p>
+            <label>Zipcode</label>
+            <input name="zipcode" type="text">
+        </p>
+        <p>
+            <label>GPS Coordinates (lat.)</label>
+            <input name="lat" type="text">
+        </p>
+        <p>
+            <label>GPS Coordinates (lon.)</label>
+            <input name="lon" type="text">
+        </p>
+        <p>
+            <label>Photo</label>
+            <input name="sampleFile" type="file">
+        </p>
+        <p>
+            <input type="submit" value="Create">
+        </p>
+    </form>
+    <a href="/read">
+        <button>Go Back Home</button>
+    </a>
+</body>
+
+</html>

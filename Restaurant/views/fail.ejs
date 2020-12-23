@@ -1,0 +1,19 @@
+<html>
+
+<head>
+    <title><%= action %>> Fail</title>
+</head>
+
+<body style="text-align: center;">
+    <header>
+        <h1><%= action %> fail</h1>
+        <h1><%= errorMessage %></h1>
+        <% if(action==="Display" || action==="Edit"){ %>
+            <a href="/read"><button>Back to restaurant list</button></a>
+        <% }else{ %>
+            <button onclick="window.history.back()">Go Back</button></a>
+        <% } %>
+    </header>
+</body>
+
+</html>
